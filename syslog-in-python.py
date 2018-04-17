@@ -39,12 +39,12 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
         if lineNumber > 10000*count:
             logdata = pd.DataFrame()  
             for key in r.scan_iter():
-                print('keys is%s'%key)
+                print('keys is %s'%key)
                 lograw = pipe.get(key)
                 pipe.delete(key)
                 pipe.execute()
                 print('log is %s'%lograw)
-                loglist = re.split(r'\s|\|',lograw)
+                loglist = re.split(r'\s|\|',str(lograw))
                 print(loglist)                
                 logdata = logdata.append(loglist,ignore_index=True)
                 logdata = logdata
