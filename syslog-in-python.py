@@ -32,7 +32,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
         global lineNumber        
         global count                     
         data = bytes.decode(self.request[0].strip(), 'utf-8')
-        pipe.lpush(lineNumber,data)
+        pipe.set(lineNumber,data)
         pipe.execute()            
         lineNumber += 1
         
