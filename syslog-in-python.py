@@ -10,7 +10,7 @@ Created on Fri Apr 13 14:57:15 2018
 ## Tiny Syslog Server in Python.
 ##
 ## This is a tiny syslog server that is able to receive UDP based syslog
-## entries on a specified port and save them in Redis
+## entries on a specified port and save them in Redis then output to csv by filter 
 ## Org file at https://gist.github.com/marcelom/4218010
 ##
 
