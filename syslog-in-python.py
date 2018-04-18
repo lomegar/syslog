@@ -40,7 +40,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
             for key in r.scan_iter():
                 print('keys is %s'%key)
                 lograw = r.get(key)
-                pipe.delete(key)
+                r.delete(key)
                 print('log is %s'%lograw)
                 loglist = re.split(r'\s|\|',str(lograw))
                 print(loglist)                
