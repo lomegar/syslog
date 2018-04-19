@@ -46,9 +46,8 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
                 loglist = re.split(r'\s|\|',str(lograw))
                 print(loglist)                
                 logdata = logdata.append(pd.Series(loglist),ignore_index=True)
-                logdata = logdata
             logdata = logdata.iloc[:,[2,3,4,5,6,11,12,13,14]]   
-            print('dataframe is %s'%logdata)
+            print('FinalResult is %s'%logdata)
             logdata.to_csv('/data/syslog/%s.csv'%int(time.time()),header=None,index=None)
             count += 1
             
